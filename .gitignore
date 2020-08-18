@@ -1,3 +1,18 @@
-.cache
-public
-node_modules
+#ENV
+.env
+
+# JS
+node_modules/
+tmp/
+npm-debug.log
+yarn-error.log
+package-lock.json
+modify.log
+
+# System/Editor directories and files
+.DS_Store
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln

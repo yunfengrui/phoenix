@@ -1,88 +1,148 @@
-[![Draftbox](https://res.cloudinary.com/thinkcdnimages/image/upload/v1589291053/Draftbox/draftbox-for-github.svg)](https://draftbox.co)
+<a href="http://www.darlang.com" align="center">
 
-# gatsby-wordpress-novela-theme
+![logo](./src/assets/images/logo.png)
 
-A Gatsby theme plugin for creating blogs from headless WordPress CMS.
+</a>
+<center>
 
-Turn your WordPress blog into a lightning fast static website. This Gatsby theme is a frontend replacement of the WordPress engine featuring the Novela theme skin and functionality. All content is sourced from a headless WordPress CMS.
+# **VueWPress**
 
-> This theme is being used at [Draftbox](https://draftbox.co). Get lightning fast, secure front-end for your WordPress or Ghost blog, in 5 minutes or less, without coding. For our fellow devs, we also provide code export feature.
+</center>
 
-## Demo
+[中文简述 ~ VueWPress](./README_CN.md)
 
-Play with the [Demo](https://wp-novela-preview.draftbox.co/) to get a first impression.
 
-## Features
+## Prerequisites
 
-- Novela theme by Narrative
-- SEO optimized
-- Fully responsive
-- Gatsby images
-- Styled 404 page
-- RSS Feed
-- AMP Pages
-- Sitemap
-- Contact Form
-- Subscribe Form
-- Social Sharing
-- Composable and extensible
+> 1. First, You must **Star** this repository. (*￣︶￣)
 
-## Quick Start
+> 2. Need to install and running WordPress above version 4.4 ,and open REST API.
 
-Head over to the [starter repo](https://github.com/draftbox-co/gatsby-wordpress-novela-starter) to get up and running quickly! The starter is recommended if you are creating a new site.
+> 3. modify `src/utils/api.js` file, change youre config.  *「E.g: site url, site language, site protocol etc.」*
 
-## Installation
+> 4. After vueWPress 0.23 release, you need to install a plugin JWT Authentication for WP-API, Can be downloaded via background plugin search or [check here](https://wordpress.org/plugins/jwt-authentication-for-wp-rest-api/)
 
-This repository contains the example code **and** the Gatsby theme. If you are here to install the Gatsby theme plugin in your existing project, check out the [theme specific README](/gatsby-wordpress-novela-theme/README.md) for further details.
+> 4.1 Modify the wp-config.php file in Wordpress root
 
-In case you want to work with this repository (for local development, pull requests, etc.):
+> 4.1.2 Find: `define('NONCE_SALT'`
 
-1. Clone or fork this repository:
+> 4.1.3 Add the following to the line under `define('NONCE_SALT'`
 
-```bash
-git clone https://github.com/draftbox-co/gatsby-wordpress-novela-theme.git
-cd gatsby-wordpress-novela-theme
+``` bash
+define('JWT_AUTH_SECRET_KEY', 'you-64-secret-key');
+#the random key here https://api.wordpress.org/secret-key/1.1/salt/
+define('JWT_AUTH_CORS_ENABLE', true);
 ```
 
-create `.wordpress-config.json` in example directory and add your wordpress config.
+> 4.1.4 `you-64-secret-key` Is a 64-bit random key, more: [check here](https://wordpress.org/plugins/jwt-authentication-for-wp-rest-api/)
 
-If your wordpress blog is self hosted it should look like
+## Build Setup
 
-```bash
-{
-  "baseUrl": "yourwordpressblog.com",
-  "protocol": "https",
-  "hostingWPCOM": false,
-  "useACF": true,
-  "includedRoutes": [
-    "**/categories",
-    "**/posts",
-    "**/pages",
-    "**/media",
-    "**/tags",
-    "**/taxonomies",
-    "**/users"
-  ]
-}
+``` bash
+# install dependencies
+npm install
+
+# serve with hot reload at localhost:8088
+npm run start
+
+#  build for development
+npm run dev
+
+# build for production
+npm run build
 ```
 
-if your blog is hosted on wordpress.com you will have to add few extra keys for reference check out [wordpress-source-docs](https://www.gatsbyjs.org/packages/gatsby-source-wordpress/).
+## What Can I Do ?
+> 1. Show home on the home page. [jump](#home) 「ver: 0.1」
 
-2. Run `yarn` in directory where you cloned theme to install dependencies.
+> 2. Show post on the article page. [jump](#article) 「ver: 0.1」
 
-3. Run `yarn workspace example develop` to start the example locally.
+> 3. Show topic on the topic page. [jump](#topic) 「ver: 0.12」
 
-## Authors
+> 4. Show topic detail on the detail page. 「ver: 0.12」
 
-- Arun Priyadarshi ([@Gunnerforlife](https://github.com/Gunnerforlife)) – [Draftbox](https://draftbox.co)
-- Keyur Raval ([@thandaanda](https://github.com/thandaanda)) – [Draftbox](https://draftbox.co)
-- Shyam Lohar ([@shyamlohar](https://github.com/shyamlohar)) – [Draftbox](https://draftbox.co)
-- Tanmay Desai ([@tanmaydesai89](https://github.com/tanmaydesai89)) – [Draftbox](https://draftbox.co)
+> 5. Show tags on the tags page. [jump](#tags) 「ver: 0.16」
 
-## Contributions
+> 6. Show tag detail on the detail page. 「ver: 0.16」
 
-PRs are welcome! Consider contributing to this project if you are missing feature that is also useful for others.
+> 7. Show All media on the gallery page. 「ver: 0.16」
 
-# Copyright & License
+> 8. Show All comment on the comments page. 「ver: 0.19」
 
-Copyright (c) 2020 [Draftbox](https://draftbox.co) - Released under the [MIT license](LICENSE).
+> 9. Show article on the articles page. [jump](#articles) 「ver: 0.23」
+
+> 10. Added comments on article page. [jump](#comment) 「ver: 0.31」
+
+> 11. Increase article publishing capabilities.  [jump](#post) 「ver: 0.31」
+
+> 12. Added user center to display nicknames, avatars, and logouts. [jump](#member) 「ver: 0.31」
+
+> 13. Added login and registration functions. [jump](#login) 「ver: 0.31」
+
+> 14. More features are in development ...
+
+## Preview Me
+### Home
+![home](./previews/home_en.png)
+
+[Back Up](#vuewpress)
+
+---
+
+### Articles
+![home](./previews/articles_en.png)
+
+[Back Up](#vuewpress)
+
+---
+
+### Article
+![home](./previews/article_en.png)
+
+[Back Up](#vuewpress)
+
+---
+
+### Topic
+![topic](./previews/topic_en.png)
+
+[Back Up](#vuewpress)
+
+---
+
+### Tags
+![page](./previews/tags_en.png)
+
+[Back Up](#vuewpress)
+
+---
+
+### Member
+![page](./previews/member_en.png)
+
+[Back Up](#vuewpress)
+
+---
+
+### Login
+![page](./previews/login_en.png)
+
+[Back Up](#vuewpress)
+
+---
+
+
+### Post
+![page](./previews/post_en.png)
+
+[Back Up](#vuewpress)
+
+---
+
+
+### Comment
+![page](./previews/comment_en.png)
+
+[Back Up](#vuewpress)
+
+---
