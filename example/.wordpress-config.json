@@ -2,7 +2,7 @@
   "baseUrl": "www.phoenixdeal.de",
   "protocol": "https",
   "hostingWPCOM": false,
-  "useACF": true,
+  "useACF": false,
   "includedRoutes": [
     "**/categories",
     "**/posts",
