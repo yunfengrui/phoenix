@@ -1,5 +1,5 @@
 module.exports = {
-  siteUrl: "https://wp-novela-preview.draftbox.co", // Site domain. Do not include a trailing slash!
+  siteUrl: "https://www.phoenixdeal.de", // Site domain. Do not include a trailing slash!
 
   postsPerPage: 10, // Number of posts shown on paginated pages (changes this requires sometimes to delete the cache)
 
@@ -14,7 +14,7 @@ module.exports = {
   siteIcon: "favicon.png", // Logo in /static dir used for SEO, RSS, and App manifest
   backgroundColor: "#e9e9e9", // Used for Offline Manifest
   themeColor: "#15171A", // Used for Offline Manifest
-  apiUrl: "https://wordpress.theasdfghjkl.com",
+  apiUrl: "https://www.phoenixdeal.de",
   subscribeWidget: {
     visible: true,
     title: "Subscribe to Draftbox",
@@ -25,11 +25,11 @@ module.exports = {
     navigation: [
       {
         label: "Home",
-        url: "https://wp-novela-preview.draftbox.co/",
+        url: "https://www.phoenixdeal.de",
       },
       {
         label: "Contact",
-        url: "https://wp-novela-preview.draftbox.co/contact",
+        url: "https://www.phoenixdeal.de",
       },
     ],
   },
